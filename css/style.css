@@ -1,0 +1,299 @@
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body{
+			background: #bbb;
+		}
+
+				/*header*/
+
+		.subheader1{
+			background: #20B2AA;
+			width: 100%;
+			height: 10vw;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		.subheader1 input{
+			width: 100%;
+			height: 2.5rem;
+			border-radius: 1rem;
+			border: 1px solid #00FF00;
+		}
+
+		.find{
+			width: 40%;
+		}
+
+		.subheader1 i{
+			font-size: 2.5rem;
+		}
+
+		.fa-cart-arrow-down{
+			color: #fff;
+		}
+
+		.fa-user{
+			color: #fff;
+		}
+
+
+		.result{
+			width: 40%;
+			overflow: hidden;
+			position: absolute;
+			background: #fff;
+			z-index: 1;
+		}
+
+		#autoSearch{
+			font-size: 25px;
+			list-style: none;
+		}
+
+
+		/*main*/
+
+		main{
+			width: 90%;
+			margin: 0 auto;
+			background: #fff;
+			padding-bottom: 1.5rem;
+		}
+
+		/*subheader2*/
+
+		.subheader2{
+			background-color:  #60e0bd;
+		}
+
+		.subheader2 ul{
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.subheader2 ul li{
+			list-style: none;
+			padding: .8rem;
+		}
+
+		.subheader2 ul li:hover{
+			background-color: #800000;
+			border-radius: 1rem;
+			color: #fff;
+		}
+
+		.subheader2 ul li a{
+			text-decoration: none;
+			color: #fff;
+			font-size: 1.5rem;
+		}
+
+		/*carousel*/
+		.carousel-inner{
+			  width:100%;
+			  max-height: 400px !important;
+			}
+
+		/*product card*/
+		.rows{
+			display: flex; 
+		}
+		.productCard{
+			width: 25%;
+			border: 1px solid #000;
+			text-align: center;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			background: #EEE8AA;
+			margin: .5rem;
+		}
+
+		.productCard img{
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		.productCard button{
+			width: 80%;
+			background: #fff;
+			border: 1px solid #000;
+			border-radius: 1rem;
+			height: 3.5rem;
+		}
+
+		.productCard button:hover{
+			background: #DC143C;
+		}
+
+		/*Footer*/
+		footer{
+			background: #20B2AA;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.getintouch h2,.menu h2{
+			text-align: center;
+		}
+
+		.getintouch ul,.menu ul{
+			list-style: none;
+		}
+
+		.getintouch ul li,.menu ul li{
+			margin: 1rem;
+		}
+
+		.getintouch ul li{
+			display: inline-block;
+		}
+
+		.getintouch ul li a,.menu ul li a{
+			text-decoration: none;
+			color: #000;
+		}
+
+		footer .getintouch i{
+			font-size: 2rem;
+		}
+
+		/*Registration*/
+
+		#register{
+			width: 80%;
+			margin: 0 auto;
+			background: #bbb;
+		}
+
+		/*welcome card*/
+
+		#welcomeCard{
+			width: 50%;
+			margin: 0 auto;
+			padding: 2rem;
+			background: #FFA500;
+		}
+
+		#welcomeCard img{
+			width: 40%;
+			border-radius: 50%;
+			margin: 1rem auto;
+		}
+
+		/*dashboard*/
+		.dashboard{
+			display: flex;
+			width: 100%;
+		}
+
+		.dashboard .sidebar{
+			width: 15%;
+		}
+
+		.sidebar ul{
+			list-style: none;
+		}
+
+		.sidebar ul li{
+			background: #8B0000;
+			margin-bottom: .5rem;
+			border-radius: .5rem;
+			text-align: center;
+		}
+
+		.sidebar ul li a{
+			font-size: 1.5rem;
+			text-decoration: none;
+			color: #fff;
+		}
+
+		.dashboard .table{
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		/*sign in*/
+
+		#signin{
+			width: 50%;
+			margin: 0 auto;
+			background-color: #bbb;
+		}
+		.my-2 form{
+			margin: 0 auto!important;
+			width: 80%;
+		}
+
+		/*add product*/
+
+		.addproduct {
+			display: flex;
+			justify-content: center;
+		}
+
+		.addproduct form {
+			width: 70%;
+		}
+
+		#add{
+			background: #16e0bd;
+			font-size: 20px;
+		}
+
+		/*addbrand*/
+
+		#brandForm{
+			width: 50%;
+			margin: 0 auto;
+			background: #bbb;
+			padding: 1.5rem;
+		}
+
+		/*addcategory*/
+			#categoryForm{
+			width: 50%;
+			margin: 0 auto;
+			background: #bbb;
+			padding: 1.5rem;
+			}
+
+		/*homepage product*/
+
+			.card {
+				width: 95%;
+				display: block;
+				margin: 0 auto;
+			}
+
+			.content, .offer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#card {
+				text-decoration: none;
+			}
+			#items{
+				width: 25%;
+				height: 380px;
+				line-height: 0px;
+				display: inline-block;
+			}
+			#items img{
+				width: 80%;
+				height: 60%;
+				display: block;
+				margin: 0 auto;
+			}
+
+			.card-body {
+				padding: 0px;
+			}
+
+
