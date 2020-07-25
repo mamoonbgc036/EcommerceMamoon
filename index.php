@@ -121,8 +121,6 @@ $megaItems = $dbInstance->specialQuery(['productId','model','price','image','bra
 ?>
 	</div>
 </div>
-	
-
-	<?php
-	include_once("inc/footer.php");
-	?>
+<?php
+include_once("inc/footer.php");
+?>

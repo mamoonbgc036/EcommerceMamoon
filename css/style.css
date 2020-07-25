@@ -34,7 +34,23 @@
 			font-size: 2.5rem;
 		}
 
+		#mycart{
+			position: relative;
+			width: 4.5rem;
+			height: 2rem;
+		}
+
+		.badge{
+			position: absolute;
+			font-size: 1.2rem!important;
+			top: -1.5rem;
+			right: .1rem;
+		}
+
 		.fa-cart-arrow-down{
+			bottom: 0;
+			position: absolute;
+			font-size: 2rem;
 			color: #fff;
 		}
 

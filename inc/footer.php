@@ -25,22 +25,6 @@
 		</div>
 	</footer>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
-
-<script>
-$(function(){
-	$('#srcbox').keyup(function(){
-		var txt = $(this).val();
-		$.ajax({
-			url:"search.php",
-			method:"POST",
-			data:{search:txt},
-			dataType:"text",
-			success:function(data){
-				$('.result').html(data);
-			}
-		});
-	});
-})
-</script>

@@ -14,7 +14,10 @@
 				<input type="text" id="srcbox" name="search" placeholder="Search for product">
 				<div class="result"></div>
 			</div>
-			<i class="fas fa-cart-arrow-down"></i>
+			<div id="mycart">
+				<i class="fas fa-cart-arrow-down"></i>
+				<i id="badge" class="badge badge-dark rounded-circle"></i>
+			</div>
 			<i class="fas fa-user"></i>
 		</div>
 	</header>
