@@ -5,13 +5,13 @@
 		}
 
 		body{
-			background: #bbb;
+			background: #F7F6F9;
 		}
 
 				/*header*/
 
 		.subheader1{
-			background: #20B2AA;
+			background: #c0e4e2;
 			width: 100%;
 			height: 10vw;
 			display: flex;
@@ -22,7 +22,6 @@
 		.subheader1 input{
 			width: 100%;
 			height: 2.5rem;
-			border-radius: 1rem;
 			border: 1px solid #00FF00;
 		}
 
@@ -56,8 +55,18 @@
 
 		.fa-user{
 			color: #fff;
+			position: relative;
 		}
 
+		.fa-user ul li{
+			position: absolute;
+			visibility: hidden;
+			list-style: none;
+		}
+
+		.fa-user ul li a{
+			font-size: 1.5rem;
+		}
 
 		.result{
 			width: 40%;
@@ -70,6 +79,24 @@
 		#autoSearch{
 			font-size: 25px;
 			list-style: none;
+		}
+
+		#smain,#cat{
+			position: relative;
+		}
+
+		#show,#showcat{
+			position: absolute;
+			color : #000;
+			z-index: 9;
+			background : #60E0BD;
+		}
+
+		#show a,#showcat a{
+			display: block;
+			padding-left: 1rem;
+			padding-right: 1rem;
+			
 		}
 
 
@@ -99,12 +126,12 @@
 		}
 
 		.subheader2 ul li:hover{
-			background-color: #800000;
+			background-color: #60E0BD;
 			border-radius: 1rem;
 			color: #fff;
 		}
 
-		.subheader2 ul li a{
+		.subheader2 ul li a,span{
 			text-decoration: none;
 			color: #fff;
 			font-size: 1.5rem;
@@ -114,7 +141,7 @@
 		.carousel-inner{
 			  width:100%;
 			  max-height: 400px !important;
-			}
+		}
 
 		/*product card*/
 		.rows{
@@ -148,7 +175,7 @@
 
 		/*Footer*/
 		footer{
-			background: #20B2AA;
+			background: #c0e4e2;
 			display: flex;
 			justify-content: space-around;
 		}
@@ -310,6 +337,27 @@
 
 			.card-body {
 				padding: 0px;
+			}
+
+			/* CATEGORY SECTION */
+			.categorySection{
+				margin : 5px;
+			}
+			.categorySection ul{
+				display : grid;
+				grid-template-columns : repeat(auto-fit,minmax(100px,1fr));
+			}
+			.categorySection ul li{
+				list-style : none;
+				border : 1px solid #000;
+				margin : 2px;
+				text-align : center;
+				padding : 5px;
+			}
+
+			.categorySection img{
+				width: 25px;
+				float: right;
 			}
 
 

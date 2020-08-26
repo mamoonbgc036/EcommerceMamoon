@@ -18,7 +18,11 @@
 				<i class="fas fa-cart-arrow-down"></i>
 				<i id="badge" class="badge badge-dark rounded-circle"></i>
 			</div>
-			<i class="fas fa-user"></i>
+			<i class="fas fa-user">
+				<ul>
+					<li><a href="signin.php">Login</a></li>
+				</ul>
+			</i>
 		</div>
 	</header>
 	<div class="cartDiv">
@@ -45,30 +49,32 @@
 		</div>
 	</div>
 	<style>
+
+
 .cartDiv{
-background : #ececec;
-width : 30%;
-position : fixed;
-right : 0;
-top : 0;
-z-index : 9;
-padding : 40px;
-height: 100vh;
-overflow: scroll;
-transition: all .3s linear;
-transform : translateX(100%);
+	background : #ececec;
+	width : 30%;
+	position : fixed;
+	right : 0;
+	top : 0;
+	z-index : 9;
+	padding : 40px;
+	height: 100vh;
+	overflow: scroll;
+	transition: all .3s linear;
+	transform : translateX(100%);
 }
 
 .cartDiv > h3{
-text-align : center;
+	text-align : center;
 }
 
 .cartDiv #clear{
-margin : 0 auto;
-display:block;
-background : #f09d51;
-padding : 10px;
-transition: all 0.3s linear;
+	margin : 2px;
+	display:inline-block; 
+	background : #f09d51;
+	padding : 10px;
+	transition: all 0.3s linear;
 }
 
 
@@ -81,6 +87,11 @@ transition: all 0.3s linear;
 .cartDiv #remove:hover,#clear:hover{
 	background: #fff;
 	color: #000;
+}
+
+.result ul li{
+	border-top: 1px solid #fff;
+	background : green;
 }
 
 .cartDivitem{
@@ -114,8 +125,8 @@ margin-top : 30px;
 			<div class="subheader2">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="">Category</a></li>
-					<li><a href="">Brand</a></li>
+					<li id="cat"><span>Category</span><div id="showcat"></div></li>
+					<li id="smain"><span>Brand</span><div id="show"></div></li>
 					<li><a href="">Contact</a></li>
 				</ul>
 			</div>

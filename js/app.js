@@ -1,181 +1,4 @@
 
-// 	$(function(){
-// 		$('.btn-success').on('click',function(e){
-// 			 e.preventDefault();
-			 
-// 	//getting image name, price and model for storing in localstorage
-
-// 			var arry = $(this).parents('a').attr('href');
-// 			var newArry = arry.split('=');
-// 			var prodId = newArry[1];
-// 			var imgArry = $(this).closest('#items').find('img').attr('src');
-// 			var newImg = imgArry.split('/');
-// 			var imgName = newImg[1];
-// 			var model = $(this).parent().find('p').text();
-// 			// var price = $(this).parent().find('h4').text();
-// 			var prePrice = $(this).parent().find('span').text();
-// 			var price = parseInt(prePrice);
-
-// 	//storing image,price and model in localstorage
-
-// 			if(localStorage.getItem(prodId)!=null){
-// 				test = JSON.parse(localStorage.getItem(prodId));
-// 				newQuantity = test[2];
-// 				newQuantity++;
-// 				var pus = JSON.stringify([imgName,model,newQuantity,price]);
-// 				localStorage.setItem(prodId,pus);
-// 			} else {
-// 				var quantity = 1;
-// 				var item = JSON.stringify([imgName,model,quantity,price]);
-// 				localStorage.setItem(prodId,item);
-// 				orderItems = [];
-// 			}
-
-// 			total++;
-// 			$('#badge').html(total);
-// 			show();
-// 		});
-
-// 		// show cart on mouseenter
-
-// 		$('#cart').mouseenter(function(){
-// 			var html = "";
-// 			if (Object.keys(localStorage)!=null){
-// 				html += '<tr><th>Name</th><th>Price</th><th>Qty</th><th>Total</th></tr>';
-// 			var x = Object.keys(localStorage);
-// 			var total = 0;
-// 			$.each(x,function(key,value){
-// 					if($.isNumeric(value)){
-// 						var test = JSON.parse(localStorage.getItem(value));
-// 					total += test[2]*test[3];
-// 					 html += '<tr><td id="name">'+test[1]+'</td><td id="price">'+test[3]+'</td><td id="name">'+test[2]+'</td><td id="name">'+test[2]*test[3]+'</td></tr>';
-// 					}
-// 				})
-// 			html += '<tr><td></td><td id="name">Total :</td><td></td><td id="price">'+total+'</td></tr>';
-// 			html += '<tr><td id="name"><span onclick="clickMe();" class="btn btn-danger">&#10006</span></td><td></td><td></td><td id="price"><a class="btn btn-info" href="checkout.php">Checkout</a></td></tr>';
-// 			$('.table').append(html);
-// 			}
-// 		});
-
-// 		function show(){
-// 			$('.cartDivitem').remove();
-// 			let html = "";
-// 			if (Object.keys(localStorage)!=null){
-// 			var x = Object.keys(localStorage);
-// 			var total = 0;
-// 			$.each(x,function(key,value){
-// 					if($.isNumeric(value)){
-// 						var test = JSON.parse(localStorage.getItem(value));
-// 					total += test[2]*test[3];
-// 					 html += `<div class="cartDivitem">
-// 					 <div class="imagePrice">
-// 						 <img src="productImages/${test[0]}" alt="">
-// 						 <div class="namePrice">
-// 							 <h5>${test[1]}</h5>
-// 							 <h5>$${test[3]}</h5>
-// 							 <button id="remove">Remove</button>
-// 						 </div>
-// 					 </div>
-// 					 <div class="updown">
-// 						 <i class="fas fa-chevron-up"></i>
-// 						 <p>${test[2]}</p>
-// 						 <i class="fas fa-chevron-down"></i>
-// 					 </div>
-// 				 </div>`;
-// 					}
-// 				})
-// 			html += `<h3 id="total">Your Total : $ 4748</h3>
-// 			<button id="clear">CLEAR CART</button>`;
-// 			$('.apnd').append(html);
-// 			}
-// 		};
-
-// 		// show quantity shoped even refreshed
-// 		if (Object.keys(localStorage).length){
-// 			var x = Object.keys(localStorage);
-// 			var total = 0;
-// 			$.each(x,function(key,value){
-// 				if($.isNumeric(value)){
-// 					var test = JSON.parse(localStorage.getItem(value));
-// 				total += test[2];
-// 				}
-// 			})
-// 		} else {
-// 			var total = "";
-// 		}
-// 		$('#badge').html(total);
-
-// 		$('#smain').mouseenter(function(){
-// 			$.ajax({
-// 				url:"search.php",
-// 				method:"POST",
-// 				data:{brandName:true},
-// 				success:function(data){
-// 					$('#test').append(data);
-// 				}
-// 			});
-// 		});
-// show();
-// 		$('#maincat h2').mouseenter(function(){
-// 			$.ajax({
-// 				url:"search.php",
-// 				method:"POST",
-// 				data:{category:true},
-// 				success:function(data){
-// 					$('.category').append(data);
-// 				}
-// 			});
-// 		});
-
-// 		function clickMe(){
-// 			$('.table tr').remove();
-// 		}
-
-// 		//Search box
-
-// 		$('#srcbox').keyup(function(){
-// 			var txt = $(this).val();
-// 			$.ajax({
-// 				url:"search.php",
-// 				method:"POST",
-// 				data:{search:txt},
-// 				dataType:"text",
-// 				success:function(data){
-// 					$('.result').html(data);
-// 				}
-// 			});
-// 		});
-// 		$('.fa-cart-arrow-down').on('click',()=>{
-// 			$('.cartDiv').css('transform','translateX(0)');	
-// 		})
-
-// 		$('.fa-window-close').click(()=>{
-// 			$('.cartDiv').css('transform','translateX(100%)');	
-// 		})
-			
-// })
-
-
-//localStorage.clear();
-
-		// event add to cart
-//catch add to cart btn clicked
-//catch product id ,image,price
-//store to local storage
-//increase the cart number
-
-
-		//event clicked on cart icon
-//update the cart div
-//make the cart visible
-
-		//event quantity up down
-//catch the click
-//increase the cart qty both side
-//update localstorage
-
-
-$(function(){
 		let total = 0;
 		//catch client clicked product details from html
 		function cartDetails($btn){
@@ -255,7 +78,34 @@ $(function(){
 		content.on('click','#clear',function(){
 			Storage.deletItems('delet','');
 		})
-		  
+		$('#order').click(function(e){
+			e.preventDefault();
+			let name = $('#name').val();
+			let address = $('#address').val();
+			let phone = $('#phone').val();
+			let y = [];
+			let data = Storage.storeTotal();
+			$.each(data[1],function(key, value){
+				let x = {};
+				x.product_id = value[1];
+				x.quantity = value[2];
+				x.customerName = name;
+				x.address = address;
+				x.phone = phone;
+				y.push(x);
+//console.log(value[1]);
+			})
+			$.ajax({
+				url:"test.php",
+				method:"post",
+				data:{result: y},
+				dataType: 'text',
+				success:function(res){
+					localStorage.clear();
+					alert('congratulation, Your order is placed. we contact with you soon')
+				}
+			})
+		})
 
 		class UI{
 			static updateCart(){
@@ -284,11 +134,11 @@ $(function(){
 					total += item[3]*item[2];
 				})
 				html += `<h3 id="total">Your Total : $ <span class="amount">${total}</span></h3>
-			 			<button id="clear">CLEAR CART</button></div>`;
+			 			<button id="clear">Clear Cart</button><a type="button" href="address.php" id="btnaddress" class="btn btn-info">Proceed Checkout</a></div>`;
 				return html;
 			}
 		}
-
+		
 		class Storage{
 			//save item to store when clicked
 			static storeCartitem(items){
@@ -357,11 +207,81 @@ $(function(){
 				$('#badge').html(total);
 			}
 		}
+
+
 		//attached store total to the cart;
 		let totals = Storage.storeTotal();
 		total = totals[0];
 		$('#badge').html(total);
+
+		//search box
+		$('#srcbox').keyup(function(){
+			var txt = $(this).val();
+			if(txt != ""){
+				$.ajax({
+					url:"search.php",
+					method:"POST",
+					data:{search:txt},
+					dataType:"text",
+					success:function(data){
+						$('.result').fadeIn(1000);
+						$('.result').html(data);
+					}
+				});
+			} else{
+				$('.result').fadeOut("slow");
+			}
+		});
+
+		$('#smain').hover(function(){
+			let x = $('#show').text();
+			if(x==""){
+				$.ajax({
+					url:"search.php",
+					method:"POST",
+					data:{brandName:true},
+					success:function(data){
+						//console.log(data);
+						 $('#show').append(data);
+						 $('#show').fadeIn(1000);
+						// $('.category').append(data);
+					}
+				});
+			} else{
+				$('#show').fadeOut(1000);
+				$('#show').html("");
+			}
+			
+		});
+
+$('.fa-user').click(function(){
+	let x = $('.fa-user ul li').css('visibility');
+	if(x=='hidden'){
+		$('.fa-user ul li').css('visibility','visible');
+	}else{
+		$('.fa-user ul li').css('visibility','hidden');
+	}
 })
+
+		$('#cat').hover(function(){
+			let x = $('#showcat').text();
+			if(x == ""){
+				$.ajax({
+					url:"search.php",
+					method:"POST",
+					data:{category:true},
+					success:function(data){
+						$('#showcat').append(data);
+						$('#showcat').fadeIn(1000);
+					}
+				});
+			} else{
+				$('#showcat').fadeOut(1000);
+				$('#showcat').html("");
+			}
+		});
+
+
 
 
 

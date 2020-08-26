@@ -6,12 +6,10 @@ $dbInstance = DB::getInstance();
 $generalItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.brand=brandId'],$limit);
 $featureItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=2','products.brand=brandId'],$limit);
 $megaItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=3','products.brand=brandId'],$limit);
+$categories = $dbInstance->read('categories','')->results();
 ?>
-
 		
-					<!-- carousel -->
-
-			
+					<!-- carousel -->			
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			  <ol class="carousel-indicators">
 			    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -38,13 +36,31 @@ $megaItems = $dbInstance->specialQuery(['productId','model','price','image','bra
 			    <span class="sr-only">Next</span>
 			  </a>
 			</div>
+			<div>
+				<h3 class="text-center">Our Products Categories</h3>
+				<div class="categorySection">
+					<ul>
+					<?php
+						if($categories){
+							foreach($categories as $categorie){
+								?>
+								<li><a href="categoryShow.php?category=<?=$categorie['catId']?>"><?=$categorie['catName']?></a>
+										<img src="categoryImage/<?=$categorie['image']?>" alt="">
+								</li>
+								<?php
+							}
+						}
+					?>
+					</ul>
+				</div>
+			</div>
 			<div class="card">
 	<div class="content">
 <?php 
   if ($generalItems){
   	foreach ($generalItems as $gItems) {
 ?>
-		<a id="card" href="productDetails.php?prodId=<?=$gItems['productId']?>">
+		<a id="card" href="productDetail.php?prodId=<?=$gItems['productId']?>">
 			<div id="items" class="card m-1">
 				<img class="card-img" src="productImages/<?=$gItems['image']?>">
 				<div class="card-body text-center">
@@ -52,7 +68,7 @@ $megaItems = $dbInstance->specialQuery(['productId','model','price','image','bra
 					<p class="card-link"><?=$gItems['model']?></p>
 					<h4 class="card-link">$ <span><?=$gItems['price']?></span></h4>
 					<button id="btn" class="btn btn-success">Add Cart</button>
-					<a id="cards" href="productDetails.php?prodId=<?=$gItems['productId']?>" class="btn btn-primary">Details</a>
+					<a id="cards" href="productDetail.php?prodId=<?=$gItems['productId']?>" class="btn btn-primary">Details</a>
 				</div>
 			</div>
 		</a>
@@ -71,7 +87,7 @@ $megaItems = $dbInstance->specialQuery(['productId','model','price','image','bra
   if ($featureItems){
   	foreach ($featureItems as $fItems) {
 ?>
-		<a id="card" href="productDetails.php?prodId=<?=$fItems['productId']?>">
+		<a id="card" href="productDetail.php?prodId=<?=$fItems['productId']?>">
 			<div id="items" class="card m-1">
 				<img class="card-img" src="productImages/<?=$fItems['image']?>">
 				<div class="card-body text-center">
@@ -99,7 +115,7 @@ $megaItems = $dbInstance->specialQuery(['productId','model','price','image','bra
   if ($megaItems){
   	foreach ($megaItems as $mItems) {
 ?>
-		<a id="card" href="productDetails.php?prodId=<?=$mItems['productId']?>">
+		<a id="card" href="productDetail.php?prodId=<?=$mItems['productId']?>">
 			<div id="items" class="card m-1">
 				<img class="card-img" src="productImages/<?=$mItems['image']?>">
 				<div class="card-body text-center">
@@ -107,7 +123,7 @@ $megaItems = $dbInstance->specialQuery(['productId','model','price','image','bra
 					<p class="card-link"><?=$mItems['model']?></p>
 					<h4 class="card-link">$ <span><?=$mItems['price']?></span></h4>
 					<button id="btn" class="btn btn-success">Add Cart</button>
-					<a id="cards" href="productDetails.php?prodId=<?=$mItems['productId']?>" class="btn btn-primary">Details</a>
+					<a id="cards" href="productDetail.php?prodId=<?=$mItems['productId']?>" class="btn btn-primary">Details</a>
 				</div>
 			</div>
 		</a>

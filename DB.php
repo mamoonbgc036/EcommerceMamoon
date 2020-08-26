@@ -21,13 +21,15 @@ class DB {
          if ($table!=null){
            $sql = "SELECT * FROM $table";
          }
-        if ($this->_query = $this->_db->prepare($sql)) {
-          if ($this->_query->execute()){
-            $this->_results = $this->_query->fetchAll();
-          } else {
-            die("something went wrong");
+//die($sql);
+          if ($this->_query = $this->_db->prepare($sql)) {
+            if ($this->_query->execute()){
+              $this->_results = $this->_query->fetchAll();
+              $this->_count = $this->_query->rowCount();
+            } else {
+              die("something went wrong");
+            }
           }
-        }
       return $this;   
     }
 
@@ -84,10 +86,15 @@ class DB {
         $sql .= $params;
       }
       $sql .= " FROM ";
-      foreach ($tables as $table) {
-        $sql .= $table. ' JOIN ';
+      if(is_array($tables)){
+        foreach ($tables as $table) {
+          $sql .= $table. ' JOIN ';
+        }
+        $sql = rtrim($sql, ' JOIN ');
+      } else{
+        $sql .= $tables. ' ';
       }
-      $sql = rtrim($sql, ' JOIN ');
+      
       if(isset($conditions)) {
         if (count($conditions)==1) {
           $sql .= " WHERE $conditions[0]";
@@ -104,6 +111,10 @@ class DB {
 
     public function results(){
       return $this->_results;
+    }
+
+    public function getCount(){
+      return $this->_count;
     }
 
 }

@@ -2,39 +2,25 @@
 include_once('autoload.php');
 if (!isset($_POST['submit'])) {
 	header('Location: addproducts.php?click=empty');
-} else {
-			// get an instance of DB class
-			$dbActivity=DB::getInstance();
+	} else{
+		// get an instance of DB class
+		$dbActivity=DB::getInstance();
 			
-		// if(!array_key_exists('order_quantity',$_REQUEST)){
-		// 	if (general::checkCsrftoken('csrfToken', $_REQUEST['csrfToken'])) {
-				
-		// 		// remove csrf field from the request
-		// 		array_shift($_REQUEST);
-		
-		// 			} else {
-		// 				echo "csrf is not ok";die();
-		// 		}
-			
-		// }
-
-
 
 		// remove button field from the request
-			array_pop($_REQUEST);
+		array_pop($_REQUEST);
 
 		//remove repassword
-			if (array_key_exists("repassword", $_REQUEST)) {
-				array_pop($_REQUEST);
-			}
+		if (array_key_exists("repassword", $_REQUEST)) {
+			array_pop($_REQUEST);
+		}
+
 			
 		// processing image
 		if ($_FILES){
 			$imgName = $_FILES['image']['name'];
 			$imgLocation = $_FILES['image']['tmp_name'];
 			$imgSize = $_FILES['image']['size'];
-		
-
 			$imgNarray = explode('.', $imgName);
 			$imgActualextension = $imgNarray[1];
 			$allowedImageextension = ['jpg', 'jpeg', 'png'];
@@ -49,6 +35,10 @@ if (!isset($_POST['submit'])) {
 						move_uploaded_file($imgLocation, 'sellerImages/'.$imgNewname);
 					} elseif(array_key_exists("model", $_REQUEST)){
 						move_uploaded_file($imgLocation, 'productImages/'.$imgNewname);
+					}	elseif(array_key_exists('phone',$_REQUEST)){
+						move_uploaded_file($imgLocation, 'userImages/'.$imgNewname);
+					}	elseif(array_key_exists('catName',$_REQUEST)){
+						move_uploaded_file($imgLocation, 'categoryImage/'.$imgNewname);
 					}
 				}
 			}
@@ -64,6 +54,8 @@ if (!isset($_POST['submit'])) {
 			$table = "categories";
 		} elseif(array_key_exists("model",$_REQUEST)){
 			$table = "products";
+		} elseif(array_key_exists('phone',$_REQUEST)){
+			$table = 'users';
 		}
 		if ($dbActivity->generateQuery($table,$_REQUEST)) {
 			header("Location: add{$table}.php");

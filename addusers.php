@@ -3,7 +3,7 @@ include_once("inc/header.php");
 ?>
 <div id="register" class="card my-2">
 	<h2 class="text-center">Register Here...</h2>
-	<form action="validation.php" class="form-group">
+	<form action="insert.php" method="POST" enctype="multipart/form-data" class="form-group">
 	<div class="first">
 		<label>
 			First Name:
@@ -28,6 +28,12 @@ include_once("inc/header.php");
 		</label>
 		<input type="text" class="form-control" name="username" placeholder="Enter Username">
 	</div>
+	<div class="clientImage">
+		<label>
+			Upload Image:
+		</label>
+		<input type="file" class="form-control" name="image">
+	</div>
 	<div class="password">
 		<label>
 			Password:
@@ -44,6 +50,7 @@ include_once("inc/header.php");
 		<input type="submit" class="btn btn-info my-2" value="submit" name="submit">
 	</div>
 </form>
+<h3 class="text-center">Have Account <a href="signin.php">Login</a></h3>
 </div>
 
 <?php

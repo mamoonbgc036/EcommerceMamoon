@@ -17,7 +17,7 @@ echo $html;
 	$data = DB::getInstance()->read(null,$sql)->results();
 	$html = "";
 	foreach($data as $datum){
-	$html .='<a class="card-link" href="productDetails.php?prodId='.$datum['id'].'">'.$datum['brandName'].'</a>';
+	$html .='<a href="productDetails.php?prodId='.$datum['brandId'].'">'.$datum['brandName'].'</a>';
 	}
 	echo $html;
 } else if(isset($_POST['category'])) {
@@ -25,7 +25,7 @@ echo $html;
 	$data = DB::getInstance()->read(null,$sql)->results();
 	$html = "";
 	foreach($data as $datum){
-	$html .='<a class="card-link" href="productDetails.php?prodId='.$datum['id'].'">'.$datum['categoryName'].'</a>';
+	$html .='<a href="productDetails.php?prodId='.$datum['catId'].'">'.$datum['catName'].'</a>';
 	}
 	echo $html;
 }
