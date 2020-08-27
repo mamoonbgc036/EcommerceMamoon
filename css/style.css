@@ -267,6 +267,11 @@
 			margin: 0 auto;
 			background-color: #bbb;
 		}
+
+		#alert p{
+			width: 80%;
+			margin: 0 auto;
+		}
 		.my-2 form{
 			margin: 0 auto!important;
 			width: 80%;

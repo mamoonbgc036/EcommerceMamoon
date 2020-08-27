@@ -67,7 +67,7 @@ class DB {
         $fieldString = rtrim($fieldString, ',');
        
          $sql = "INSERT INTO `$table` ($keyString) VALUES ($fieldString)";
-//die($sql);
+         // die($sql);
         if ($this->insert($sql, $values)){
             return true;
         }

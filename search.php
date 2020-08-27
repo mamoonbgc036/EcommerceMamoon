@@ -8,7 +8,7 @@ $data = DB::getInstance()->read(null,$sql)->results();
 $html = "";
 $html .= "<ul class='test'>";
 foreach($data as $datum){
-$html .='<li id="autoSearch"><a class="card-link" href="productDetails.php?prodId='.$datum['productId'].'">'.$datum['model'].'</a></li>';
+$html .='<li id="autoSearch"><a class="card-link" href="productDetail.php?prodId='.$datum['productId'].'">'.$datum['model'].'</a></li>';
 }
 $html .="</ul>";
 echo $html;
@@ -17,7 +17,7 @@ echo $html;
 	$data = DB::getInstance()->read(null,$sql)->results();
 	$html = "";
 	foreach($data as $datum){
-	$html .='<a href="productDetails.php?prodId='.$datum['brandId'].'">'.$datum['brandName'].'</a>';
+	$html .='<a href="brandShow.php?brand='.$datum['brandId'].'">'.$datum['brandName'].'</a>';
 	}
 	echo $html;
 } else if(isset($_POST['category'])) {
@@ -25,7 +25,7 @@ echo $html;
 	$data = DB::getInstance()->read(null,$sql)->results();
 	$html = "";
 	foreach($data as $datum){
-	$html .='<a href="productDetails.php?prodId='.$datum['catId'].'">'.$datum['catName'].'</a>';
+	$html .='<a href="categoryShow.php?category='.$datum['catId'].'">'.$datum['catName'].'</a>';
 	}
 	echo $html;
 }

@@ -22,7 +22,11 @@ include_once("autoload.php");
 				if($megaItems){
 					header("Location: dashboard.php");
 				}else{
-					die('not ok');
+					?>
+					<div id="alert">
+						<p class="bg-warning text-center">wrong username or password!try again</p>
+					</div>
+					<?php
 				}
 			}
 		}

@@ -3,7 +3,7 @@ include_once("inc/header.php");
 include_once('autoload.php');
 $limit = 4;
 $dbInstance = DB::getInstance();
-$generalItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.brand=brandId'],$limit);
+$generalItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=1','products.brand=brandId'],$limit);
 $featureItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=2','products.brand=brandId'],$limit);
 $megaItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=3','products.brand=brandId'],$limit);
 $categories = $dbInstance->read('categories','')->results();
