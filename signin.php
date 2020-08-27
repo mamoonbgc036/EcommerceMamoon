@@ -16,11 +16,11 @@ include_once("autoload.php");
 			} else {
 				$username = $_POST['username'];
 				$password = $_POST['password'];
-				$sql = "SELECT * FROM users WHERE username = '$username' AND password= '$password'";
+				$sql = "SELECT * FROM admin WHERE username = '$username' AND password= '$password'";
 				$dbInstance = DB::getInstance();
 				$megaItems = $dbInstance->read(null,$sql)->getCount();	
 				if($megaItems){
-					die('ok');
+					header("Location: dashboard.php");
 				}else{
 					die('not ok');
 				}

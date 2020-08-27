@@ -55,12 +55,16 @@ if (!isset($_POST['submit'])) {
 		} elseif(array_key_exists("model",$_REQUEST)){
 			$table = "products";
 		} elseif(array_key_exists('phone',$_REQUEST)){
-			$table = 'users';
+			$table = 'admin';
 		}
 		if ($dbActivity->generateQuery($table,$_REQUEST)) {
-			header("Location: add{$table}.php");
+			if(array_key_exists('phone',$_REQUEST)){
+				header("Location: dashboard.php");
+			} else{
+				header("Location: add{$table}.php");
+			}
 		} else {
-			echo "something wrong";
+			echo "somethings wrong";
 		}
 	
 }

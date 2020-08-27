@@ -102,7 +102,7 @@
 				dataType: 'text',
 				success:function(res){
 					localStorage.clear();
-					alert('congratulation, Your order is placed. we contact with you soon')
+					alert(res)
 				}
 			})
 		})

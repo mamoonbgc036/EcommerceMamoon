@@ -6,4 +6,5 @@ if(isset($_REQUEST['result'])){
         //var_dump($item);die();
         $dbActivity->generateQuery('orders',$item);
     }
+    echo "congratulation, Your order is placed. we contact with you soon";
 }

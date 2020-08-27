@@ -27,7 +27,7 @@ class DB {
               $this->_results = $this->_query->fetchAll();
               $this->_count = $this->_query->rowCount();
             } else {
-              die("something went wrong");
+              die("somethings went wrong");
             }
           }
       return $this;   
