@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['username'])){
  include_once("inc/header.php");
 ?>
 <h1 class="text-center text-danger">Add Brand</h1>
@@ -16,4 +18,7 @@
 </div>
 <?php
  include_once("inc/footer.php");
+}else{
+	header('Location: signin.php');
+}
 ?>

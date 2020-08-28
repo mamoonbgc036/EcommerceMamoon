@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("inc/header.php");
 include_once("autoload.php");
 ?>
@@ -20,6 +21,7 @@ include_once("autoload.php");
 				$dbInstance = DB::getInstance();
 				$megaItems = $dbInstance->read(null,$sql)->getCount();	
 				if($megaItems){
+					$_SESSION['username']=$username;
 					header("Location: dashboard.php");
 				}else{
 					?>

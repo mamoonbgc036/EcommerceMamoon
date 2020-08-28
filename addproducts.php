@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['username'])){
 include_once("inc/header.php");
 include_once('autoload.php');
 $dbInstance = DB::getInstance();
@@ -78,4 +80,7 @@ $categories = $dbInstance->read('categories','')->results();
  </script>
 <?php
 include_once('inc/footer.php');
+}else{
+	header('Location: signin.php');
+}
 ?>

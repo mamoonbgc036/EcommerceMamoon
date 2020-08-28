@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['username'])){
 include_once("inc/header.php");
 ?>
 <style type="text/css">
@@ -45,4 +47,7 @@ include_once("inc/header.php");
 </div>
 <?php
 include_once("inc/footer.php");
+} else{
+	header('Location: signin.php');
+}
 ?>

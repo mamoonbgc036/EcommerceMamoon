@@ -20,7 +20,18 @@
 			</div>
 			<i class="fas fa-user">
 				<ul>
+				<?php
+				// session_start();
+				if(isset($_SESSION['username'])){
+					?>
+					<li><a href="insert.php?logout=<?=$_SESSION['username']?>">Logout</a></li>
+					<?php
+				}else{
+					?>
 					<li><a href="signin.php">Login</a></li>
+					<?php
+				}
+				?>
 				</ul>
 			</i>
 		</div>
