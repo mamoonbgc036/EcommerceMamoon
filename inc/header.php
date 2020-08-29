@@ -95,9 +95,13 @@ background : #f09d51;
 transition: all 0.3s linear;
 }
 
-.cartDiv #remove:hover,#clear:hover{
+.cartDiv #remove:hover{
 	background: #fff;
 	color: #000;
+}
+
+.cartDiv #cleared{
+	margin-right: 5px;
 }
 
 .result ul li{

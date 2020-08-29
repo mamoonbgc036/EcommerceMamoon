@@ -2,9 +2,26 @@
 session_start();
 if(isset($_SESSION['username'])){
 include_once("inc/header.php");
+include_once("autoload.php");
+$pdo = DB::getInstance();
+$products = $pdo->read('products','')->results();
+if(isset($_POST['del'])){
+	print_r($_POST['del']);die();
+}
 ?>
 <style type="text/css">
-	
+	main{
+		width:100%;
+	}
+	.dashboard .table {
+		width: 84%;
+	}
+#action{
+width: 18%;
+}
+#img{
+width:30px;
+}
 </style>
 <div class="dashboard">
 	<div class="sidebar">
@@ -17,31 +34,36 @@ include_once("inc/header.php");
 	<table class="table table-dark">
 	  <thead>
 	    <tr>
-	      <th scope="col">#</th>
-	      <th scope="col">First</th>
-	      <th scope="col">Last</th>
-	      <th scope="col">Handle</th>
+	      <th scope="col">Id</th>
+	      <th scope="col">Name</th>
+	      <th scope="col">Category</th>
+	      <th scope="col">Brand</th>
+	      <th scope="col">Details</th>
+	      <th scope="col">Image</th>
+	      <th scope="col">Price</th>
+	      <th scope="col" id="action">Action</th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
-	      <th scope="row">1</th>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
+<?php
+	foreach($products as $product){
+?>
+	    <tr id="<?=$product[0]?>">
+	      <td id="prodId" scope="row"><?=$product[0]?></td>
+	      <td><?=$product[2];?></td>
+	      <td><?=$product[3];?></td>
+	      <td><?=$product[1];?></td>
+		  <td><?=$product[4];?></td>
+			<td><img src="productImages/<?=$product[5];?>" id="img" alt=""></td>
+			<td><?=$product[7];?></td>
+			<td>
+				<a href="" class="btn btn-success">Update</a>
+				<button class="btn btn-danger">Delete</button>
+			</td>
 	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Jacob</td>
-	      <td>Thornton</td>
-	      <td>@fat</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <td>Larry</td>
-	      <td>the Bird</td>
-	      <td>@twitter</td>
-	    </tr>
+<?php
+	}
+?>
 	  </tbody>
 	</table>
 </div>

@@ -75,7 +75,7 @@
 			Storage.deletItems('deletItem',id);
 		})
 
-		content.on('click','#clear',function(){
+		content.on('click','#cleared',function(){
 			Storage.deletItems('delet','');
 		})
 		$('#order').click(function(e){
@@ -134,7 +134,7 @@
 					total += item[3]*item[2];
 				})
 				html += `<h3 id="total">Your Total : $ <span class="amount">${total}</span></h3>
-			 			<button id="clear">Clear Cart</button><a type="button" href="address.php" id="btnaddress" class="btn btn-info">Proceed Checkout</a></div>`;
+			 			<button class="btn btn-info" id="cleared">Clear Cart</button><a type="button" href="address.php" id="btnaddress" class="btn btn-info">Proceed Checkout</a></div>`;
 				return html;
 			}
 		}
@@ -280,6 +280,21 @@ $('.fa-user').click(function(){
 				$('#showcat').html("");
 			}
 		});
+
+		// Delete product
+		$('.btn-danger').click(function(){
+			let dat = $(this).closest('tr').find('#prodId').text();;
+			$.ajax({
+			 url:"test.php",
+				method:"POST",
+				data:"del="+dat,
+				dataType:"text",
+				success:function(res){
+					alert(res);
+					$('#'+dat).remove();
+				}
+			})
+		})
 
 
 

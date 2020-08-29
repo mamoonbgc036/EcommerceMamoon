@@ -1,7 +1,8 @@
 <?php
 session_start();
 if(isset($_REQUEST['logout'])){
-	unset($_SESSION['username']);
+	//unset($_SESSION['username']);
+	session_destroy();
 	header('Location: index.php');
 } else{
 	include_once('autoload.php');

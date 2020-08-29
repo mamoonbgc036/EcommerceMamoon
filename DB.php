@@ -53,6 +53,13 @@ class DB {
         }
     }
 
+    public function delete($table,$param){
+      $sql = "DELETE FROM $table WHERE productId=$param";
+      $this->_query = $this->_db->prepare($sql);
+      $this->_query->execute();
+      return $this;
+    }
+
     public function generateQuery($table,$keyValue) {
         $keyString = "";
         $fieldString = "";
