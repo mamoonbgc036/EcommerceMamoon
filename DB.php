@@ -33,7 +33,7 @@ class DB {
       return $this;   
     }
 
-    private function insert($sql, $params) {
+    private function insert($sql, $params=null) {
         $this->_error = false;
         if($this->_query = $this->_db->prepare($sql)) {
           $x = 1;
@@ -60,6 +60,10 @@ class DB {
       return $this;
     }
 
+    public function update($table,$params){
+
+    }
+
     public function generateQuery($table,$keyValue) {
         $keyString = "";
         $fieldString = "";
@@ -72,8 +76,10 @@ class DB {
         }
         $keyString = rtrim($keyString, ',');
         $fieldString = rtrim($fieldString, ',');
-       
-         $sql = "INSERT INTO `$table` ($keyString) VALUES ($fieldString)";
+
+         
+            $sql = "INSERT INTO `$table` ($keyString) VALUES ($fieldString)";
+
          // die($sql);
         if ($this->insert($sql, $values)){
             return true;
@@ -103,11 +109,16 @@ class DB {
       }
       
       if(isset($conditions)) {
-        if (count($conditions)==1) {
-          $sql .= " WHERE $conditions[0]";
-        } else {
-          $sql .= " WHERE $conditions[0] AND $conditions[1]";
+        $sql .= " WHERE ";
+        for($i=0;$i<sizeof($conditions);$i++){
+          $sql .= " $conditions[$i] AND ";
         }
+        $sql = rtrim($sql, ' AND ');
+        // if (count($conditions)==1) {
+        //   $sql .= " WHERE $conditions[0]";
+        // } else {
+        //   $sql .= " WHERE $conditions[0] AND $conditions[1]";
+        // }
       }
       if ($limit!=null){
         $sql .=" LIMIT $limit";

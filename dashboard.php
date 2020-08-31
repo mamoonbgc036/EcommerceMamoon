@@ -57,7 +57,7 @@ width:30px;
 			<td><img src="productImages/<?=$product[5];?>" id="img" alt=""></td>
 			<td><?=$product[7];?></td>
 			<td>
-				<a href="" class="btn btn-success">Update</a>
+				<a href="addproducts.php?updateId=<?=$product[0]?>" class="btn">Update</a>
 				<button class="btn btn-danger">Delete</button>
 			</td>
 	    </tr>

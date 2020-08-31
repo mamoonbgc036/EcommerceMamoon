@@ -318,6 +318,10 @@
 				margin: 0 auto;
 			}
 
+			#card span{
+				color: #000;
+			}
+
 			.content, .offer {
 				display: flex;
 				align-items: center;

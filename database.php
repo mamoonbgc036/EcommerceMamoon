@@ -1,6 +1,4 @@
 <?php
-//echo $_POST['del'];die();
-print_r($_POST['del']);die();
 // $con = mysqli_connect('localhost','root','','show');
 // $sql = "CREATE TABLE brands(
 //     brandId int(10) NOT NULL AUTO_INCREMENT,

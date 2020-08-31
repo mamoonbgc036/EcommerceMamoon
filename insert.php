@@ -1,18 +1,17 @@
 <?php
 session_start();
+include_once('autoload.php');
+// get an instance of DB class
+$dbActivity=DB::getInstance();
+
 if(isset($_REQUEST['logout'])){
 	//unset($_SESSION['username']);
 	session_destroy();
 	header('Location: index.php');
 } else{
-	include_once('autoload.php');
 	if (!isset($_POST['submit'])) {
 		header('Location: addproducts.php?click=empty');
 		} else{
-			// get an instance of DB class
-			$dbActivity=DB::getInstance();
-				
-	
 			// remove button field from the request
 			array_pop($_REQUEST);
 	
@@ -49,6 +48,25 @@ if(isset($_REQUEST['logout'])){
 					}
 				}
 				$_REQUEST['image'] = $imgNewname;
+			}
+
+			var_dump($_REQUEST['brand']);die();
+
+			
+			if(isset($_SESSION['updateId'])){
+					
+// productId
+// brand
+// model
+// categoryId
+// details
+// image
+// address
+// price
+// offe
+// 				$sql = "UPDATE products SET brand="
+				header('Location: dashboard.php');
+				//exit();
 			}
 	
 			// check form input name for selecting table e.g if name model exit than db table will be products
