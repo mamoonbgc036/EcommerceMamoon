@@ -59,7 +59,7 @@ if(isset($_SESSION['username'])){
 		<div>
 			<h3>Speciality :</h3>
 			<select class="form-control" name="offer"  required>
-				<option <?=(isset($updateItem)) ? $updateItem[0]['offer'] : "" ?> selected><?=(isset($updateItem)) ? $updateItem[0]['offer'] : "Select Your Offer" ?></option>
+				<option value="<?=(isset($updateItem)) ? $updateItem[0]['offer'] : "" ?>" selected><?=(isset($updateItem)) ? $updateItem[0]['offer'] : "Select Your Offer" ?></option>
 				<option value="1">General Offer</option>
 				<option value="2">Feature Offer</option>
 				<option value="3">Mega Offer</option>

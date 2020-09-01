@@ -50,23 +50,17 @@ if(isset($_REQUEST['logout'])){
 				$_REQUEST['image'] = $imgNewname;
 			}
 
-			var_dump($_REQUEST['brand']);die();
+			//var_dump($_REQUEST['brand']);die();
 
 			
 			if(isset($_SESSION['updateId'])){
-					
-// productId
-// brand
-// model
-// categoryId
-// details
-// image
-// address
-// price
-// offe
-// 				$sql = "UPDATE products SET brand="
+				$sql = "UPDATE products SET brand='{$_REQUEST['brand']}', model='{$_REQUEST['model']}', categoryId='{$_REQUEST['categoryId']}', details='{$_REQUEST['details']}', image='{$_REQUEST['image']}', address= '{$_REQUEST['address']}', price = '{$_REQUEST['price']}', offer = '{$_REQUEST['offer']}' WHERE productId = {$_SESSION['updateId']}";
+				 //$sql = "UPDATE products SET brand = '{$_REQUEST["brand"]}' WHERE productId=1";
+				 //die($sql);
+				$dbActivity->read(null,$sql);
+				unset($_SESSION['updateId']);
 				header('Location: dashboard.php');
-				//exit();
+				exit();
 			}
 	
 			// check form input name for selecting table e.g if name model exit than db table will be products
