@@ -78,7 +78,7 @@ if(isset($_REQUEST['logout'])){
 			if ($dbActivity->generateQuery($table,$_REQUEST)) {
 				if(array_key_exists('phone',$_REQUEST)){
 					$_SESSION['username']= $_REQUEST['username'];
-					header("Location: dashboard.php");
+					header("Location: welcome.php");
 				} else{
 					header("Location: add{$table}.php");
 				}
