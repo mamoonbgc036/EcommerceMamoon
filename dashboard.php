@@ -26,7 +26,7 @@ width:30px;
 <div class="dashboard">
 	<div class="sidebar">
 		<ul>
-			<li><a href="">Upload Product</a></li>
+			<li><a href="addproducts.php">Upload Product</a></li>
 			<li><a href="">Post Product</a></li>
 			<li><a href="">Your Account</a></li>
 		</ul>
