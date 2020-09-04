@@ -224,12 +224,13 @@
 					data:{search:txt},
 					dataType:"text",
 					success:function(data){
-						$('.result').fadeIn(1000);
 						$('.result').html(data);
+						// $('.result').fadeIn(300);
 					}
 				});
 			} else{
-				$('.result').fadeOut("slow");
+				// $('.result').fadeOut("slow");
+				$('.result').html("");
 			}
 		});
 
@@ -282,19 +283,38 @@ $('.fa-user').click(function(){
 		});
 
 		// Delete product
+		// $('.btn-danger').click(function(){
+		// 	let dat = $(this).closest('tr').find('#prodId').text();;
+		// 	$.ajax({
+		// 	 url:"test.php",
+		// 		method:"POST",
+		// 		data:"del="+dat,
+		// 		dataType:"text",
+		// 		success:function(res){
+		// 			alert(res);
+		// 			$('#'+dat).remove();
+		// 		}
+		// 	})
+		// })
+
 		$('.btn-danger').click(function(){
-			let dat = $(this).closest('tr').find('#prodId').text();;
-			$.ajax({
-			 url:"test.php",
-				method:"POST",
-				data:"del="+dat,
-				dataType:"text",
-				success:function(res){
-					alert(res);
-					$('#'+dat).remove();
-				}
-			})
+			 if(confirm("Are you sure you want to delete this?")){
+			       let dat = $(this).closest('tr').find('#prodId').text();;
+					$.ajax({
+					 url:"test.php",
+						method:"POST",
+						data:"del="+dat,
+						dataType:"text",
+						success:function(res){
+							$('#'+dat).remove();
+						}
+					})
+			    }
+			    else{
+			        return false;
+			    }
 		})
+
 
 
 

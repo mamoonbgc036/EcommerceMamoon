@@ -133,7 +133,7 @@
 
 		.subheader2 ul li a,span{
 			text-decoration: none;
-			color: #fff;
+			color: #000;
 			font-size: 1.5rem;
 		}
 
@@ -312,11 +312,25 @@
 
 		/*homepage product*/
 
+			#main{
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+
+			#main div{
+				text-align: center;
+			}
+
 			.card {
 				width: 95%;
 				display: block;
-				margin: 0 auto;
 			}
+
+			#notice ul li{
+				list-style: none;
+			}
+
+
 
 			#card span{
 				color: #000;

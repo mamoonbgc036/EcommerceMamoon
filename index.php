@@ -2,11 +2,7 @@
 session_start();
 include_once("inc/header.php");
 include_once('autoload.php');
-$limit = 4;
 $dbInstance = DB::getInstance();
-$generalItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=1','products.brand=brandId'],$limit);
-$featureItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=2','products.brand=brandId'],$limit);
-$megaItems = $dbInstance->specialQuery(['productId','model','price','image','brandName'],['products','brands'],['products.offer=3','products.brand=brandId'],$limit);
 $categories = $dbInstance->read('categories','')->results();
 ?>
 		
@@ -37,6 +33,23 @@ $categories = $dbInstance->read('categories','')->results();
 			    <span class="sr-only">Next</span>
 			  </a>
 			</div>
+		<div class="card" id="main">	
+			<div>
+				<h2>About Us</h2>
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
 			<div>
 				<h3 class="text-center">Our Products Categories</h3>
 				<div class="categorySection">
@@ -55,89 +68,17 @@ $categories = $dbInstance->read('categories','')->results();
 					</ul>
 				</div>
 			</div>
-			<div class="card">
-	<div class="content">
-<?php 
-  if ($generalItems){
-  	foreach ($generalItems as $gItems) {
-?>
-		<a id="card" href="productDetail.php?prodId=<?=$gItems['productId']?>">
-			<div id="items" class="card m-1">
-				<img class="card-img" src="productImages/<?=$gItems['image']?>">
-				<div class="card-body text-center">
-					<h3 class="card-title"><?=$gItems['brandName']?></h3>
-					<p class="card-link"><?=$gItems['model']?></p>
-					<h4 class="card-link">$ <span><?=$gItems['price']?></span></h4>
-					<button id="btn" class="btn btn-success">Add Cart</button>
-					<a id="cards" href="productDetail.php?prodId=<?=$gItems['productId']?>" class="btn btn-primary">Details</a>
+			<div id="notice">
+				<h2>Notice Board</h2>
+				<div>
+					<ul>
+						<li>1.this product is zero stock now</li>
+						<li>1.this product is zero stock now</li>
+						<li>1.this product is zero stock now</li>
+					</ul>
 				</div>
 			</div>
-		</a>
-<?php 
-		}
-             } else {
-             	?>
-            <h2 class= "text-warning">Sorrry there is no product at now!</h2>
-             	<?php
-             }
-?>
-	</div>
-<h2 id="offer" class="text-center">Special Offer:</h2>
-		<div class="content">
-<?php 
-  if ($featureItems){
-  	foreach ($featureItems as $fItems) {
-?>
-		<a id="card" href="productDetail.php?prodId=<?=$fItems['productId']?>">
-			<div id="items" class="card m-1">
-				<img class="card-img" src="productImages/<?=$fItems['image']?>">
-				<div class="card-body text-center">
-					<h3 class="card-title"><?=$fItems['brandName']?></h3>
-					<p class="card-link"><?=$fItems['model']?></p>
-					<!-- <h4 class="card-link">Tk. <?=$fItems['price']?></h4> -->
-					<h4 class="card-link">$ <span><?=$fItems['price']?></span></h4> 
-					<button id="btn" class="btn btn-success">Add Cart</button>
-					<a id="cards" href="productDetails.php?prodId=<?=$fItems['productId']?>" class="btn btn-primary">Details</a>
-				</div>
-			</div>
-		</a>
-<?php 
-		}
-             } else {
-             	?>
-            <h2 class= "text-warning">Sorrry there is no product at now!</h2>
-             	<?php
-             }
-?>
-	</div>
-<h2 id="offer" class="text-center">Mega Offer:</h2>
-		<div class="content">
-<?php 
-  if ($megaItems){
-  	foreach ($megaItems as $mItems) {
-?>
-		<a id="card" href="productDetail.php?prodId=<?=$mItems['productId']?>">
-			<div id="items" class="card m-1">
-				<img class="card-img" src="productImages/<?=$mItems['image']?>">
-				<div class="card-body text-center">
-					<h3 class="card-title"><?=$mItems['brandName']?></h3>
-					<p class="card-link"><?=$mItems['model']?></p>
-					<h4 class="card-link">$ <span><?=$mItems['price']?></span></h4>
-					<button id="btn" class="btn btn-success">Add Cart</button>
-					<a id="cards" href="productDetail.php?prodId=<?=$mItems['productId']?>" class="btn btn-primary">Details</a>
-				</div>
-			</div>
-		</a>
-<?php 
-		}
-             } else {
-             	?>
-            <h2 class= "text-warning">Sorrry there is no product at now!</h2>
-             	<?php
-             }
-?>
-	</div>
-</div>
+		</div>
 <?php
 include_once("inc/footer.php");
 ?>
