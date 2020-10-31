@@ -2,27 +2,30 @@
 		let total = 0;
 		//catch client clicked product details from html
 		function cartDetails($btn){
-			//generating product id
-			let arry = $btn.parents('a').attr('href');
-			let newArry = arry.split('=');
-			let prodId = newArry[1];
-			//generating imageName
-			let imgArry = $btn.closest('#items').find('img').attr('src');
-			let newImg = imgArry.split('/');
-			let imgName = newImg[1];
-			//generating model
-			let model = $btn.parent().find('p').text();
-			//generating price
-			let prePrice = $btn.parent().find('span').text();
-			let price = parseInt(prePrice);
-			return [prodId,imgName,model,price];
+			// getting price from the dom
+			let price = $btn.parent().find('p').text();
+			let newPrice = price.split('.');
+			
+			// getting product name the dom
+			let product = $btn.parent().find('h5').text();
+			
+			//getting images from the dom
+
+			let image = $btn.parent().find('img').attr('src');
+			let newImage = image.split('/');
+
+			//getting productid from the dom
+			let productId = $btn.parent('#cart').attr('class');
+			
+			return[productId,product,newImage[1],newPrice[1]];
 		}
+
 		//add cart button click event
-		$('.btn-success').click(function(e){	
-				e.preventDefault();
-				let items = cartDetails($(this));
-				Storage.storeCartitem(items);						
+		$('.add').on('click',function(){
+			let item = cartDetails($(this));
+			Storage.storeCartitem(item);
 		})
+
 		//cart icon click event
 		$('.fa-cart-arrow-down').on('click',()=>{
 			$('.apnd').append(UI.updateCart());
@@ -155,7 +158,7 @@
 						localStorage.setItem(prodId,item);
 					}
 					total++
-					$('#badge').html(total);
+					$('#badges').html(total);
 				}
 				
 		//return store total 

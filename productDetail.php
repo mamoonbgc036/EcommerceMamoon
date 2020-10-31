@@ -6,7 +6,7 @@ $check = $_GET['prodId'];
 $items = DB::getInstance()->specialQuery(['productId','details','model','price','products.image','brandName','catName'],['products','brands','categories'],['productId='.$check.'','products.brand=brandId AND products.categoryId=categories.catId']);
 //var_dump($items);die();
 ?>
-<div id="parent" class="card my-4">
+<div id="parent">
      <div id="image">
         <img src="productImages/<?=$items[0]['image']?>" alt="">
     </div>
@@ -20,12 +20,12 @@ $items = DB::getInstance()->specialQuery(['productId','details','model','price',
                 <?=$items[0]['details']?>
                 </p>
             </div>
-            <h3>Price : <?=$items[0]['price']?></h3>
+            <h3 id="price">Price : $ <?=$items[0]['price']?></h3>
             <div id="plusCard">
-                <form action="">
-                    <input type="number" class="buyfield form-control" value="1">
-                    <input type="submit" class="btn btn-info" value="AddCard">
-                </form>
+                <div>
+                    <input type="number" id="<?=$items[0]['productId']?>" class="buyfield form-control" value="1">
+                    <input type="submit" id="bulkAdd" class="btn btn-info" value="Add Card">
+                </div>
             </div>
      </div>
        <div id="categories">

@@ -13,4 +13,13 @@ if(isset($_REQUEST['result'])){
    }else{
        echo "there is somethink wrong";
    }
+} elseif(isset($_POST['fdata'])){
+    $data = json_decode($_POST['fdata']);
+    $name = array_pop($data);
+    //echo gettype($data[0][0]);die();
+    foreach ($data as $datum) {
+      $dbActivity->read("","INSERT INTO `order`(`name`, `product_name`, `quantity`, `price`) VALUES ('$name','$datum[0]',$datum[2],$datum[3])"); 
+    }
+
+    // $dbActivity->read("","INSERT INTO `order`(`name`, `product_name`, `quantity`, `price`) VALUES ('a','b',2,250)");
 }

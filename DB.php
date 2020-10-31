@@ -24,10 +24,10 @@ class DB {
 //die($sql);
           if ($this->_query = $this->_db->prepare($sql)) {
             if ($this->_query->execute()){
-              $this->_results = $this->_query->fetchAll();
-              $this->_count = $this->_query->rowCount();
-            } else {
-              die("somethings went wrong");
+                $this->_results = $this->_query->fetchAll();
+                $this->_count = $this->_query->rowCount();
+              } else {
+                die("somethings went wrong");
             }
           }
       return $this;   

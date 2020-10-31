@@ -1,5 +1,4 @@
-</main>		
-	<footer>
+<footer>
 		<div class="menu">
 			<h2>Menu</h2>
 			<ul>
@@ -24,7 +23,8 @@
 			<p>Contact : 01814418723</p>
 		</div>
 	</footer>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/apps.js"></script>
 </body>
 </html>

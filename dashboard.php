@@ -10,7 +10,7 @@ if(isset($_POST['del'])){
 }
 ?>
 <style type="text/css">
-	main{
+	/*main{
 		width:100%;
 	}
 	.dashboard .table {
@@ -21,7 +21,7 @@ width: 18%;
 }
 #img{
 width:30px;
-}
+}*/
 </style>
 <div class="dashboard">
 	<div class="sidebar">
