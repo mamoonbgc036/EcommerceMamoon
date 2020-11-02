@@ -4,6 +4,8 @@ include_once('autoload.php');
 // get an instance of DB class
 $dbActivity=DB::getInstance();
 
+//var_dump($_REQUEST);die();
+
 if(isset($_REQUEST['logout'])){
 	//unset($_SESSION['username']);
 	session_destroy();
@@ -18,7 +20,9 @@ if(isset($_REQUEST['logout'])){
 			//remove repassword
 			if (array_key_exists("repassword", $_REQUEST)) {
 				array_pop($_REQUEST);
-			}
+			};
+
+			//var_dump($_REQUEST);die();
 	
 				
 			// processing image
@@ -32,7 +36,7 @@ if(isset($_REQUEST['logout'])){
 				if (!in_array($imgActualextension, $allowedImageextension)){
 					header('Location: addproducts.php?defectExtension');
 				} else {
-					if ($imgSize > 1000000) {
+					if ($imgSize > 10000000) {
 						header('Location: addproducts.php?toobig');
 					} else {
 						$imgNewname = uniqid().'.'.$imgActualextension;
@@ -74,6 +78,8 @@ if(isset($_REQUEST['logout'])){
 				$table = "products";
 			} elseif(array_key_exists('phone',$_REQUEST)){
 				$table = 'admin';
+			} elseif(array_key_exists('token', $_REQUEST)){
+				$table = 'address';
 			}
 			if ($dbActivity->generateQuery($table,$_REQUEST)) {
 				if(array_key_exists('phone',$_REQUEST)){

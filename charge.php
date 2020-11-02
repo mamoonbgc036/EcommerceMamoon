@@ -4,6 +4,8 @@
     \Stripe\Stripe::setApiKey('sk_test_GAsnKZjNu5OKUgKGLd3bDLvb00KrjEKY7I');
     $POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
 
+    //var_dump($POST);die();
+
     $amount = explode("$", $POST['totalTk']);
 
 
@@ -22,6 +24,6 @@
         'customer'=> $customer->id
     ));
     
-    header("Location: address.php?transId={$charge->id}");
+    header("Location: address.php?token={$POST['token']}");
 
 ?>

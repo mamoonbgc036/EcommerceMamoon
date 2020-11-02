@@ -15,11 +15,12 @@ if(isset($_REQUEST['result'])){
    }
 } elseif(isset($_POST['fdata'])){
     $data = json_decode($_POST['fdata']);
-    $name = array_pop($data);
+    $token = array_pop($data);
+    $name  = array_pop($data);
     //echo gettype($data[0][0]);die();
     foreach ($data as $datum) {
-      $dbActivity->read("","INSERT INTO `order`(`name`, `product_name`, `quantity`, `price`) VALUES ('$name','$datum[0]',$datum[2],$datum[3])"); 
+      $dbActivity->read("","INSERT INTO `orders`(`name`, `product_name`, `quantity`, `price`,`token`) VALUES ('$name','$datum[0]',$datum[2],$datum[3],'$token')"); 
     }
-
+    //print_r($data[0]);
     // $dbActivity->read("","INSERT INTO `order`(`name`, `product_name`, `quantity`, `price`) VALUES ('a','b',2,250)");
 }

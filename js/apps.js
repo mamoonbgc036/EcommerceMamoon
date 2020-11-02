@@ -333,11 +333,12 @@ function stripeResponseHandler(status, response) {
         //get token id
         var token = response['id'];
         //insert the token into the form
-        $("#frmStripePayment").append("<input type='hidden' name='token' value='" + token + "' />");
+        $("#frmStripePayment").append("<input type='hidden' id='token' name='token' value='" + token + "' />");
 
         //TAKE BTN VALUE OF CHARGE FORM
         let totalTk  = $('.btnAction').val();
         let name = $('#name').val();
+
 
 
         $("#frmStripePayment").append("<input type='hidden' name='totalTk' value='" + totalTk + "' />");
@@ -346,7 +347,13 @@ function stripeResponseHandler(status, response) {
 
         datum.push(name);
 
+        datum.push(token);
+
+        //console.log(datum);
+
         let data = JSON.stringify(datum);
+
+        alert(data);
 
 		$.ajax({
 			url : "test.php",

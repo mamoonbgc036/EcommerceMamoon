@@ -34,6 +34,7 @@ class DB {
     }
 
     private function insert($sql, $params=null) {
+      //print_r($sql);die();
         $this->_error = false;
         if($this->_query = $this->_db->prepare($sql)) {
           $x = 1;
@@ -80,7 +81,7 @@ class DB {
          
             $sql = "INSERT INTO `$table` ($keyString) VALUES ($fieldString)";
 
-         // die($sql);
+          //die($sql);
         if ($this->insert($sql, $values)){
             return true;
         }
