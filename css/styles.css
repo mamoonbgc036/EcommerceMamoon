@@ -397,6 +397,11 @@
 			background-size: cover;
 			object-fit: cover;
 		}
+
+		.thanks{
+			width: 50%;
+			margin: auto;
+		}
 		
 
 		@media only screen and (max-width: 800px){

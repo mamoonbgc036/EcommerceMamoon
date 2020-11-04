@@ -85,6 +85,8 @@ if(isset($_REQUEST['logout'])){
 				if(array_key_exists('phone',$_REQUEST)){
 					$_SESSION['username']= $_REQUEST['username'];
 					header("Location: welcome.php");
+				} elseif(array_key_exists('token', $_REQUEST)){
+					header("Location: thanks.php");
 				} else{
 					header("Location: add{$table}.php");
 				}

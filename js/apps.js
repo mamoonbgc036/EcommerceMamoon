@@ -353,8 +353,6 @@ function stripeResponseHandler(status, response) {
 
         let data = JSON.stringify(datum);
 
-        alert(data);
-
 		$.ajax({
 			url : "test.php",
 			method : "POST",
@@ -372,8 +370,7 @@ function stripeResponseHandler(status, response) {
 
 $('.btnAction').on('click',function(e){
 	e.preventDefault();
-	 var valid = cardValidation();
-
+	var valid = cardValidation();
     if(valid == true) {
         $("#submit-btn").hide();
         $( "#loader" ).css("display", "inline-block");
