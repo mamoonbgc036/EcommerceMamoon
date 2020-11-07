@@ -14,6 +14,7 @@ if(isset($_REQUEST['logout'])){
 	if (!isset($_POST['submit'])) {
 		header('Location: addproducts.php?click=empty');
 		} else{
+			//print_r($_REQUEST);die();
 			// remove button field from the request
 			array_pop($_REQUEST);
 	

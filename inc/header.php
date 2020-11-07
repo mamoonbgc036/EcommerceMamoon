@@ -15,6 +15,13 @@
 		<div id="logo">
 			<a href="index.php"><img src="images/logo.png"></a>
 		</div>
+		<?php 
+		if (isset($_SESSION['username'])) {
+		?>
+		<div id="dashboard" class="mt-1 text-center"><a href="dashboard.php"><img src="images/admin.jpg"></a></div>
+		<?php
+		}else{
+		?>
 		<div id="search">
 			<span class="fa fa-search form-control-feedback"></span>
 			<div id="inputResult">
@@ -22,11 +29,20 @@
 				<div class="result"></div>
 			</div>
 		</div>
+		<?php
+		}
+		?>
 		<div id="cartuser">
+			<?php
+			if (!isset($_SESSION['username'])) {
+			?>
 			<div id="cart">
 				<i class="fas fa-cart-arrow-down"></i>
 				<i id="badges" class="badge badge-dark rounded-circle"></i>
 			</div>
+			<?php
+			}
+			?>
 			<div id="user">
 				<i class="fas fa-user">
 				<ul>
@@ -35,7 +51,6 @@
 				if(isset($_SESSION['username'])){
 					?>
 					<li><a href="insert.php?logout=<?=$_SESSION['username']?>">Logout</a></li>
-					<li class="mt-1"><a href="dashboard.php">Dashboard</a></li>
 					<?php
 				}else{
 					?>

@@ -18,6 +18,15 @@
 			width: 20%;
 		}
 
+		#dashboard{
+			width: 60%;
+			margin: 0 auto;
+		}
+
+		#dashboard img{
+			width: 80px;
+		}
+
 		#logo img{
 			width: 100%;
 		}

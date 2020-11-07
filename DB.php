@@ -5,7 +5,7 @@ class DB {
 
     private function __construct(){
         try{
-            $this->_db = new PDO("mysql:host=localhost;dbname=test",'root','');
+            $this->_db = new PDO("mysql:host=localhost;dbname=show",'root','');
         } catch(PDOException $e){
             die($e->getMessage());
         }       
@@ -34,7 +34,8 @@ class DB {
     }
 
     private function insert($sql, $params=null) {
-      //print_r($sql);die();
+      //print_r($params);die();
+      //die($sql);
         $this->_error = false;
         if($this->_query = $this->_db->prepare($sql)) {
           $x = 1;
