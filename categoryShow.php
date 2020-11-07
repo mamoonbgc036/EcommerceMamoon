@@ -1,12 +1,14 @@
 <?php
 session_start();
 $catId = $_GET['category'];
+$catName = $_GET['catName'];
 include_once("inc/header.php");
 include_once('autoload.php');
 $dbInstance = DB::getInstance();
 $catItems = $dbInstance->specialQuery(['productId','model','brandName','price','image'],['products','brands'],['products.categoryId='.$catId.'','products.brand=brands.brandId']);
+//print_r($catItems[0]);die();
 ?>
-   <h2 id="contentheading">Electric Section</h2>  
+   <h2 id="contentheading"><?=$catName?> Section</h2>  
         <?php
             if($catItems){
                 ?>

@@ -29,7 +29,7 @@ $categories = $dbInstance->read('categories','')->results();
                if($categories){
                    foreach($categories as $categorie){
             ?>
-           <li><a href="categoryShow.php?category=<?=$categorie['catId']?>"><?=$categorie['catName']?></a>
+           <li><a href="categoryShow.php?category=<?=$categorie['catId']?>&catName=<?=$categorie['catName']?>"><?=$categorie['catName']?></a>
           <img src="categoryImage/<?=$categorie['image']?>" alt="">
            </li>
          <?php

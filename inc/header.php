@@ -35,6 +35,7 @@
 				if(isset($_SESSION['username'])){
 					?>
 					<li><a href="insert.php?logout=<?=$_SESSION['username']?>">Logout</a></li>
+					<li class="mt-1"><a href="dashboard.php">Dashboard</a></li>
 					<?php
 				}else{
 					?>

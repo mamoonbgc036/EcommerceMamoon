@@ -307,7 +307,14 @@
 			text-align: center;
 		}
 
+		#noticediv{
+			background: url('../images/notics.jpg');
+			background-size: cover;
+		}
+
 		#homeContent #about{
+			background: url("../images/mision.jpg");
+			background-size: cover;
 			overflow: scroll;
 		}
 

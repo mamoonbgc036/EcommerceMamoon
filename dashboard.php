@@ -5,6 +5,7 @@ include_once("inc/header.php");
 include_once("autoload.php");
 $pdo = DB::getInstance();
 $products = $pdo->read('products','')->results();
+//print_r($products[0]);die();
 if(isset($_POST['del'])){
 	print_r($_POST['del']);die();
 }
@@ -54,8 +55,8 @@ width:30px;
 	      <td><?=$product[3];?></td>
 	      <td><?=$product[1];?></td>
 		  <td><?=$product[4];?></td>
-			<td><img src="productImages/<?=$product[5];?>" id="img" alt=""></td>
-			<td><?=$product[7];?></td>
+			<td><img src="productImages/<?=$product[8];?>" id="img" alt=""></td>
+			<td><?=$product[6];?></td>
 			<td>
 				<a href="addproducts.php?updateId=<?=$product[0]?>" class="btn">Update</a>
 				<button class="btn btn-danger">Delete</button>
