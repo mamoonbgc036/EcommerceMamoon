@@ -418,7 +418,12 @@
 			width: 50%;
 			margin: auto;
 		}
+
+		/*CATEGORY*/
 		
+		#categories ul li{
+			list-style: none;
+		}
 
 		@media only screen and (max-width: 800px){
 
