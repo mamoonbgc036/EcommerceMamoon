@@ -50,7 +50,7 @@ include_once("inc/header.php");
 		<input type="submit" class="btn btn-info my-2" value="submit" name="submit">
 	</div>
 </form>
-<h3 class="text-center">Have Account <a href="signin.php">Login</a></h3>
+<p class="text-center">Have Account <a href="signin.php">Login</a></p>
 </div>
 
 <?php

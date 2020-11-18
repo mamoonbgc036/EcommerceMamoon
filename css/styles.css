@@ -5,13 +5,17 @@
 		}
 
 		body{
-			background: #F7F8FA;
+			background: url('../images/bg6.jpg') no-repeat;
+			background-size: cover;
+			min-height: 100vh;
 		}
 
 							/*HEADER*/
 		
 		#topheader{
 			display: flex;
+			background: #fff;
+			opacity: 0.8;
 		}
 
 		#topheader #logo{
@@ -265,7 +269,12 @@
 				border : 1px solid #000;
 				margin : 2px;
 				text-align : center;
+				background: #1DBF73;
 				padding : 5px;
+			}
+
+			.categorySection ul li a{
+				color: #fff;
 			}
 
 			.categorySection img{
@@ -278,8 +287,10 @@
 		footer{
 			display: flex;
 			justify-content: space-around;
-			margin-top: 50px;
-			background: #C0E4E2;
+			background: #fff;
+			opacity: 0.8;
+			width: 100%;
+			padding: 30px;		    
 		}
 
 		footer li{
@@ -306,7 +317,7 @@
 		#homeContent{
 			display: flex;
 			margin: 20px;
-			height: 50vh;
+			height: 60vh;
 			justify-content: center;
 		}
 
@@ -316,15 +327,11 @@
 			text-align: center;
 		}
 
-		#noticediv{
-			background: url('../images/notics.jpg');
-			background-size: cover;
-		}
-
-		#homeContent #about{
-			background: url("../images/mision.jpg");
-			background-size: cover;
-			overflow: scroll;
+		#about,#noticediv{
+			    background-size: cover;
+			    opacity: 0.9;
+			    background-color: #1DBF73;
+			    overflow-y: scroll;
 		}
 
 		#noticediv ul li{
@@ -425,28 +432,6 @@
 			list-style: none;
 		}
 
-		/*STRIPE PAYMENT FORM*/
-		#stripe{
-			display: flex;
-			justify-content: center;
-		}
-
-		#frmStripePayment{
-			width: 40%;
-			background: #5B6BC0;
-			padding: 20px;
-		}
-
-		#frmStripePayment input{
-			width: 100%;
-		}
-
-		.btnAction{
-			max-width:200px!important;
-			margin: 0 auto;
-			display: block;
-		}
-
 		@media only screen and (max-width: 800px){
 
 						/*HEADER*/
@@ -482,10 +467,11 @@
 						/*FOOTER*/
 
 			footer{
-				display: block;
-				width: 90%;
-				margin: 0 auto;
-				text-align: center;
+				       display: block;
+    position: relative;
+    margin: 3px auto;
+    text-align: center;
+    height: 100%;
 			}
 
 			#homeContent{
