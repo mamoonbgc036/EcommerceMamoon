@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost','root','','show');
+$con = mysqli_connect('localhost','root','','test');
 $sql = "CREATE TABLE brands(
     brandId int(10) NOT NULL AUTO_INCREMENT,
     brandName varchar(50),

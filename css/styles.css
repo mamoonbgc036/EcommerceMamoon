@@ -425,6 +425,28 @@
 			list-style: none;
 		}
 
+		/*STRIPE PAYMENT FORM*/
+		#stripe{
+			display: flex;
+			justify-content: center;
+		}
+
+		#frmStripePayment{
+			width: 40%;
+			background: #5B6BC0;
+			padding: 20px;
+		}
+
+		#frmStripePayment input{
+			width: 100%;
+		}
+
+		.btnAction{
+			max-width:200px!important;
+			margin: 0 auto;
+			display: block;
+		}
+
 		@media only screen and (max-width: 800px){
 
 						/*HEADER*/

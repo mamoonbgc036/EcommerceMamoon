@@ -4,9 +4,11 @@ include_once("inc/header.php");
 	<?php if(!empty($successMessage)) { ?>
 <div id="success-message"><?php echo $successMessage; ?></div>
 <?php  } ?>
-<div id="error-message"></div>
+<div id="error-message" class="text-center bg-waring"></div>
 
-<form id="frmStripePayment" action="charge.php" method="post">
+<div id="stripe">
+    <form id="frmStripePayment" action="charge.php" method="post">
+        <h3 class="text-center text-light">Pay With Stripe</h3>
     <div class="field-row">
         <label>Card Holder Name</label> <span id="card-holder-name-info"
             class="info"></span><br> <input type="text" id="name"
@@ -56,16 +58,14 @@ include_once("inc/header.php");
     </div>
     <div>
     <input type="submit" name="pay_now" value="Pay $<?=$_GET['totalTk']?>"
-            id="submit-btn" class="btnAction">
-        <div id="loader">
-            <img alt="loader" src="LoaderIcon.gif">
-        </div>
+            id="submit-btn" class="btn btn-success btnAction mt-1">
     </div>
     <!-- <input type='hidden' name='amount' value='0.5'> <input type='hidden'
         name='currency_code' value='USD'> <input type='hidden'
         name='item_name' value='Test Product'> <input type='hidden'
         name='item_number' value='PHPPOTEG#1'> -->
 </form>
+</div>
 <?php
 include_once("inc/footer.php");
 ?>
