@@ -13,7 +13,7 @@
 
 	<div id="topheader">
 		<div id="logo">
-			<a href="index.php"><img src="images/logo.png"></a>
+			<a href="index.php"><img src="images/logo.jpg"></a>
 		</div>
 		<?php 
 		if (isset($_SESSION['username'])) {
@@ -25,7 +25,7 @@
 		<div id="search">
 			<span class="fa fa-search form-control-feedback"></span>
 			<div id="inputResult">
-				<input type="text" name="" id="srcbox">
+				<input type="text" name="" id="srcbox" placeholder="Search for your dream product">
 				<div class="result"></div>
 			</div>
 		</div>

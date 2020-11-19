@@ -22,7 +22,7 @@ $categories = $dbInstance->read('categories','')->results();
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>      
      <div class="card" id="categorydiv">
-         <h3 class="text-center">Our Products Categories</h3>
+         <h2 class="text-center">Our Products Categories</h2>
             <div class="categorySection">
              <ul>
              <?php
@@ -42,7 +42,16 @@ $categories = $dbInstance->read('categories','')->results();
       <div class="card" id="noticediv">
           <h2>Events</h2>
           <ul>
-              <li>hello</li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
+              <li><a href="">Grab Apple x with 40% discount</a></li>
           </ul>
       </div>
 </div>                      

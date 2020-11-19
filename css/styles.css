@@ -10,6 +10,22 @@
 			min-height: 100vh;
 		}
 
+		/*STRIPE PAYMENT*/
+
+	 #stripe{
+        display: flex;
+    }
+    #frmStripePayment{
+        margin: 10px auto;
+        background: #0088C7;
+        opacity: 0.8;
+        padding: 20px;
+        width: 40%;
+    }
+    #frmStripePayment input{
+        width: 100%;
+    }
+
 							/*HEADER*/
 		
 		#topheader{
@@ -68,6 +84,7 @@
 			width: 20%;
 			display: flex;
 			align-items: center;
+			color: #DB1217;
 			justify-content: space-around;
 		}
 
@@ -197,10 +214,12 @@
 							/*CONTENT*/
 
 		#content{
-			display: grid;
-			grid-template-columns: repeat(auto-fit,minmax(200px,max-content));
-			align-items: center;
-			justify-content: center;
+			  display: grid;
+			    grid-template-columns: repeat(auto-fit,minmax(200px,max-content));
+			    align-items: center;
+			    justify-content: center;
+			    margin: 20px auto;
+			    width: 90%;
 		}
 
 		#content #cart{
@@ -221,7 +240,7 @@
 		#contentheading{
 			margin-top: 30px;
 			text-align: center;
-			color: #15D99F;
+			color: #F17421;
 		}
 
 		#contentheading::after{
@@ -235,9 +254,10 @@
 
 		#loginForm,#register{
 			width: 60%;
-			margin: 20px auto;
-		 	background-color: #bbb;
-		 	padding: 50px;
+			margin: 40px auto;
+		 	background-color: #46B9FF;
+		 	opacity: 0.9;
+		 	padding: 30px;
 		}
 
 		#welcomeCard{
@@ -289,8 +309,7 @@
 			justify-content: space-around;
 			background: #fff;
 			opacity: 0.8;
-			width: 100%;
-			padding: 30px;		    
+			width: 100%;	    
 		}
 
 		footer li{
@@ -299,6 +318,7 @@
 
 		.menu li a{
 			text-decoration: none;
+			color: #000;
 		}
 
 		.getintouch ul{
@@ -313,18 +333,30 @@
 			margin: 10px;
 		}
 
+		.address p{
+			color: #000;
+		}
+
 		/*about*/
 		#homeContent{
 			display: flex;
 			margin: 20px;
-			height: 60vh;
+			height: 70vh;
 			justify-content: center;
+		}
+
+		#homeContent h2,footer h2,#loginForm h2,#register h2{
+			color: red;
 		}
 
 		#homeContent #about,#categorydiv,#noticediv{
 			width: 30%;
 			margin: 5px;
 			text-align: center;
+		}
+
+		#about p{
+			color: #000;
 		}
 
 		#about,#noticediv{
@@ -335,7 +367,11 @@
 		}
 
 		#noticediv ul li{
-			list-style: none;
+			margin: 5px auto;
+		}
+
+		#noticediv ul li a{
+			color: #000;
 		}
 
 		/*add product*/
@@ -347,6 +383,9 @@
 
 		.addproduct form {
 			width: 70%;
+			background: #1DBF73;
+			opacity: 0.8;
+			padding: 10px;
 		}
 
 		#add{

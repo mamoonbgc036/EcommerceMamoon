@@ -3,8 +3,8 @@ session_start();
 include_once("inc/header.php");
 include_once("autoload.php");
 ?>
-<div class="card my-2" id="loginForm">
-	<h3 class="text-center">Log in</h3>
+<div class="card" id="loginForm">
+	<h2 class="text-center">Log in</h2>
 	<?php
 		if(!empty($_POST)){
 			$error = validation::check($_POST)->getCheck();

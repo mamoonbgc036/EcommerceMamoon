@@ -13,9 +13,9 @@ if(isset($_SESSION['username'])){
 	$brands = $dbInstance->read('brands','')->results();
 	$categories = $dbInstance->read('categories','')->results();
 ?>
-<h1 class="text-center text-danger">Add Product</h1>
 <div class="addproduct">
 	<form class="form my-2" action="insert.php" method="POST" enctype="multipart/form-data">
+		<h1 class="text-center text-danger">Add Product</h1>
 		<div>
 			<h3>Product Brand :</h3>
 			<select class="form-control" name="brand"  id="brand" required>
