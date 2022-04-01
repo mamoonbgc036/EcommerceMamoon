@@ -1,17 +1,12 @@
 <?php
-$con = mysqli_connect('localhost','root','','test');
+$con = mysqli_connect('localhost','root','','show');
 $sql = "CREATE TABLE brands(
     brandId int(10) NOT NULL AUTO_INCREMENT,
     brandName varchar(50),
     PRIMARY KEY(brandId)
 )";
 
-
-if(mysqli_query($con,$sql)){
-    echo "ok";
-} else{
-    echo "not ok";
-}
+mysqli_query($con,$sql);
 
 $sql1 = "CREATE TABLE categories(
     catId int(10) NOT NULL AUTO_INCREMENT,
