@@ -5,15 +5,16 @@
 
 
 
-USAGE
+<h3>USAGE</h3>
 
-REQUIREMENT:
-1.xampp server
-2.Browser
+<h3>REQUIREMENT:</h3>
+<h2>1.Xampp server</h2>
+<h2>2.Browser</h2>
 
-Know How?
-1.Create a database named "show" in your xampp server.
-2.Star xampp server.
-3.Set up database by browsing database.php file first.
-4.Now, you are good to go.
-5.Click on user logo and signin for having account
+<h3>Know How?:</h3>
+<h2>1.Create a database named "show" in your xampp server</h2>
+<h2>2.Star xampp server</h2>
+<h2>3.Set up database by browsing database.php file first</h2>
+<h2>4.Now, you are good to go..</h2>
+<h2>5.Click on user icon and signin for having account</h2>
+
