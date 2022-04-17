@@ -8,13 +8,12 @@
 <h3>USAGE</h3>
 
 <h3>REQUIREMENT:</h3>
-<h2>1.Xampp server</h2>
-<h2>2.Browser</h2>
+<h4>1.Xampp server</h4>
+<h4>2.Browser</h4>
 
 <h3>Know How?:</h3>
-<h2>1.Create a database named "show" in your xampp server</h2>
-<h2>2.Star xampp server</h2>
-<h2>3.Set up database by browsing database.php file first</h2>
-<h2>4.Now, you are good to go..</h2>
-<h2>5.Click on user icon and signin for having account</h2>
-
+<h4>1.Create a database named "show" in your xampp server</h4>
+<h4>2.Star xampp server</h4>
+<h4>3.Set up database by browsing database.php file first</h4>
+<h4>4.Now, you are good to go..</h4>
+<h4>5.Click on user icon and signin for having account</h4>
